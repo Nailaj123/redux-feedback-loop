@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
+
+
+
 import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Support from '../Support/Support';
