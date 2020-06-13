@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import Home from '../Home/Home';
+import Feeling from '../Feeling/Feeling';
+import Support from '../Support/Support';
+import Understanding from '../Understanding/Understanding';
+import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
+
+
+
+
+
+
 
 class App extends Component {
   render() {
@@ -10,7 +23,16 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
-        <br/>
+        <br />
+        <Router>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Feeling" component={Feeling} />
+          <Route exact path="/Support" component={Support} />
+          <Route exact path="/Understanding" component={Understanding} />
+          <Route exact path="/Comments" component={Comments} />
+          <Route exact path="/Review" component={Review} />
+
+        </Router>
       </div>
     );
   }
