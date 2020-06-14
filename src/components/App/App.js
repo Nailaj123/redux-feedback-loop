@@ -4,17 +4,11 @@ import './App.css';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 
-
-import Home from '../Home/Home';
 import Feeling from '../Feeling/Feeling';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
-
-
-
-
 
 
 
@@ -28,8 +22,7 @@ class App extends Component {
         </header>
         <br />
         <Router>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/Feeling" component={Feeling} />
+          <Route exact path='/' component={Feeling} />
           <Route exact path="/Support" component={Support} />
           <Route exact path="/Understanding" component={Understanding} />
           <Route exact path="/Comments" component={Comments} />

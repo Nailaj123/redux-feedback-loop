@@ -1,53 +1,35 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-// import mapStoreToProps from '../../../modules/mapStoreToProps';
-
 
 
 class Feeling extends Component {
-    state = {
-        feeling: '',
-        button: true
-    }
 
+    // Called when the input field changes
     handleChange = (event) => {
-        this.setState({
-            feeling: event.target.value,
-            button: false
-        })
+        //dispatching an action
+        this.props.dispatch({ type: 'SET_FEELINGS', payload: event.target.value, name: event.target.name })
     }
-
-    handleClick = (event) => {
-        this.props.dispatch({ type: 'SET_FEELINGS', payload: this.state.feeling })
-        console.log('From feeling: ', this.state.feeling)
+    // Called when the submit button is pressed
+    handleClick = () => {
+        //navigate to the understanding page
+        this.props.history.push('/Understanding');
     }
 
     render() {
         return (
-            <Router>
+            <div>
+                <Header />
                 <h2>How are you feeling today?</h2>
-                <h3>(1 is terrible and 5 is awesome)</h3>
+                <label>Feeling? (1 - 5)</label>
+                <input onChange={this.handleChange} type="number" name="feeling" />
+                <button onClick={this.handleClick}>NEXT</button>
 
-                <div>
-                    <input name="feeling" value="1" onChange={(event) => this.handleChange(event)} /> 1
-                <input name="feeling" value="2" onChange={(event) => this.handleChange(event)} /> 2
-                <input name="feeling" value="3" onChange={(event) => this.handleChange(event)} /> 3
-                <input name="feeling" value="4" onChange={(event) => this.handleChange(event)} /> 4
-                <input name="feeling" value="5" onChange={(event) => this.handleChange(event)} /> 5
-                </div>
-
-            </Router>
-        );
+            </div>
+        )
     }
+
 }
-
-
-
-
-
-
-
 
 
 const mapStateToProps = (reduxStore) => ({
