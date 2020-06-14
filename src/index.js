@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, combineReducers, applyMiddleware, } from 'redux'
+import { Provider } from 'react-redux'
+import logger from 'redux-logger'
+
 
 const feedback = {
     Feeling: 0,
@@ -12,7 +14,6 @@ const feedback = {
     Support: 0,
     Comments: ''
 }
-
 
 //reducer will return an object of feedback
 const feedbackReducer = (state = feedback, action) => {

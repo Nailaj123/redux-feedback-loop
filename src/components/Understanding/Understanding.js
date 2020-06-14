@@ -16,7 +16,7 @@ class Understanding extends Component {
     render() {
         return (
             <div>
-                <Header />
+
                 <h2>How well are you understanding the content?</h2>
                 <label>understanding? (1 - 5)</label>
                 <input onChange={this.handleChange} type="number" name="understanding" />

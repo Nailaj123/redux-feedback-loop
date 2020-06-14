@@ -16,7 +16,7 @@ class Support extends Component {
     render() {
         return (
             <div>
-                <Header />
+
                 <h2>How well are you being supported?</h2>
                 <label>Support? (1 - 5)</label>
                 <input onChange={this.handleChange} type="number" name="Support" />
