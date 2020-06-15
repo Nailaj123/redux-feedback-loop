@@ -13,20 +13,20 @@ class ReviewFeedback extends Component {
         comments: '',
     };
 
-    const postFeedback = (feedbackReducer) => {
-        return axios({
-            method: 'POST',
-            url: '/feedback',
-            data: feedbackReducer
-        }).then(response => {
-            console.log('response from POST in client', response.data)
+    // const postFeedback = (feedbackReducer) => {
+    //     return axios({
+    //         method: 'POST',
+    //         url: '/feedback',
+    //         data: feedbackReducer
+    //     }).then(response => {
+    //         console.log('response from POST in client', response.data)
 
-        })
-            .catch(err => {
-                alert('in axios post', err)
-            })
-        this.props.history.push('/thanks');
-    }
+    //     })
+    //         .catch(err => {
+    //             alert('in axios post', err)
+    //         })
+    //     this.props.history.push('/thanks');
+    // }
 
 
 
@@ -39,10 +39,10 @@ class ReviewFeedback extends Component {
         this.props.history.push('/')
     }
 
-    submitToDatabase = () => {
-        postFeedback(this.props.reduxState.feedbackReducer);
-        this.moveToHomePage();
-    }
+    // submitToDatabase = () => {
+    //     postFeedback(this.props.reduxState.feedbackReducer);
+    //     this.moveToHomePage();
+    // }
     render() {
 
 
@@ -70,7 +70,7 @@ const mapStateToProps = (reduxState) => {
 
 const connectedReviewFeedback = connect(mapStateToProps)(ReviewFeedback)
 
-export default withRouter(connectedReviewFeedback, postFeedback)
+export default withRouter(connectedReviewFeedback)
 
 
 
