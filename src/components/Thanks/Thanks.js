@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import Button from '@material-ui/core/Button';
 import { withRouter } from "react-router-dom";
 
 class Thanks extends Component {

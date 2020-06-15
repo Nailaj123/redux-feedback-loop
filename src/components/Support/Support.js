@@ -19,7 +19,7 @@ class Support extends Component {
 
                 <h2>How well are you being supported?</h2>
                 <label>Support? (1 - 5)</label>
-                <input onChange={this.handleChange} type="number" name="Support" />
+                <input onChange={this.handleChange} type="number" name="Support" min="0" max="5" />
                 <button onClick={this.handleClick}>NEXT</button>
 
             </div>

@@ -19,7 +19,7 @@ class Understanding extends Component {
 
                 <h2>How well are you understanding the content?</h2>
                 <label>understanding? (1 - 5)</label>
-                <input onChange={this.handleChange} type="number" name="understanding" />
+                <input onChange={this.handleChange} type="number" name="understanding" min="0" max="5" />
                 <button onClick={this.handleClick}>NEXT</button>
 
             </div>
